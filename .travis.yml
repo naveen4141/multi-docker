@@ -11,14 +11,13 @@ script:
 
 after_success:
   - docker build -t naveen4141/complex-multi-client ./client
-  - docker build -t naveen4141/complex-multi-server ./server
-  - docker build -t naveen4141/complex-multi-nginx ./nginx
-  - docker build -t naveen4141/complex-multi-worker ./worker
+#  - docker build -t naveen4141/complex-multi-server ./server
+#  - docker build -t naveen4141/complex-multi-nginx ./nginx
+#  - docker build -t naveen4141/complex-multi-worker ./worker
 
 # docker hub image push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
   - docker push naveen4141/complex-multi-client
-  - docker push naveen4141/complex-multi-server
-  - docker push naveen4141/complex-multi-nginx
-  - docker push naveen4141/complex-multi-worker
+#  - docker push naveen4141/complex-multi-server
+#  - docker push naveen4141/complex-multi-nginx
+#  - docker push naveen4141/complex-multi-worker
