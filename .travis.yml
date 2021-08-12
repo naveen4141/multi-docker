@@ -18,8 +18,8 @@ after_success:
 # docker hub image push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker push complex-multi-client
-  - docker push complex-multi-nginx
-  - docker push complex-multi-server
-  - docker push complex-multi-worker
+  - docker push naveen4141/naveend:complex-multi-client
+  - docker push naveen4141/naveend:complex-multi-nginx
+  - docker push naveen4141/naveend:complex-multi-server
+  - docker push naveen4141/naveend:complex-multi-worker
 
