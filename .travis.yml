@@ -10,22 +10,15 @@ script:
   - docker run -e CI=true complexclient-dev npm run test
 
 after_success:
-  - docker build -t complex-multi-client ./client
-  - docker build -t complex-multi-server ./server
-  - docker build -t complex-multi-nginx ./nginx
-  - docker build -t complex-multi-worker ./worker
+  - docker build -t naveen4141/complex-multi-client ./client
+  - docker build -t naveen4141/complex-multi-server ./server
+  - docker build -t naveen4141/complex-multi-nginx ./nginx
+  - docker build -t naveen4141/complex-multi-worker ./worker
 
 # docker hub image push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker tag complex-multi-client complex-multi-client
-  - docker push complex-multi-client
-
-  - docker tag complex-multi-server complex-multi-server
-  - docker push complex-multi-server
-
-  - docker tag complex-multi-nginx complex-multi-nginx
-  - docker push complex-multi-nginx
-
-  - docker tag complex-multi-worker complex-multi-worker
-  - docker push complex-multi-worker
+  - docker push naveen4141/complex-multi-worker
+  - docker push naveen4141/complex-multi-server
+  - docker push naveen4141/complex-multi-nginx
+  - docker push naveen4141/complex-multi-worker
