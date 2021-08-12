@@ -21,3 +21,16 @@ after_success:
   - docker push naveen4141/complex-multi-server
   - docker push naveen4141/complex-multi-nginx
   - docker push naveen4141/complex-multi-worker
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: multi-docker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-ap-south-1-766298420977
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
